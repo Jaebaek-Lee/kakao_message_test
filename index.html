@@ -5,10 +5,39 @@
   <meta charset="utf-8">
   <link rel="icon" href="./img/first.png" />
   <title>codetree</title>
+  <style>
+    button {
+      border-radius: 86px;
+      background: #161616;
+      display: flex;
+      width: 250px;
+      padding: 20px 0px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: #0F0;
+      text-align: center;
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-family: Pretendard;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 48px;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #18c921;
+      color: #000000;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
-
+  <button id="kakaotalk-sharing-btn">
+    참여하기
+  </button>
 </body>
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
   integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
@@ -16,68 +45,68 @@
   Kakao.init('3ae371c8ff78f4266a3a8422f611c287'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
 
-<a id="kakaotalk-sharing-btn" href="javascript:;">
-  <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
-    alt="카카오톡 공유 보내기 버튼" />
-</a>
-
 <script>
-  Kakao.Share.createDefaultButton({
-    container: '#kakaotalk-sharing-btn',
-    objectType: 'feed',
-    content: {
-      title: '코드트리 | 방학 대학 대항전',
-      description: '비전공자도 전공자 수준으로 성장하는 30만원 상당 커리큘럼 무료 제공!',
-      imageUrl:
-        'https://thinking-vincent.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffc39cb72-89e7-4772-83e2-13a321131160%2F49c45630-8010-4dab-8504-595c4b14996d%2FUntitled.png?table=block&id=9e145bb6-e033-45db-9b66-d4115026edd3&spaceId=fc39cb72-89e7-4772-83e2-13a321131160&width=1920&userId=&cache=v2',
-      link: {
-        // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-        mobileWebUrl: 'https://jaebaek-lee.github.io',
-        webUrl: 'https://jaebaek-lee.github.io',
+  const button = document.querySelector('#kakaotalk-sharing-btn');
+  const onClicked = (event) => {
+    // event.preventDefault();
+    Kakao.Share.createDefaultButton({
+      container: '#kakaotalk-sharing-btn',
+      objectType: 'feed',
+      content: {
+        title: '코드트리 | 방학 대학 대항전',
+        description: '비전공자도 전공자 수준으로 성장하는 30만원 상당 커리큘럼 무료 제공!',
+        imageUrl:
+          'https://thinking-vincent.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffc39cb72-89e7-4772-83e2-13a321131160%2F1e53f807-4149-49ea-b2f8-75828cea4eec%2F%25EC%258D%25B8%25EB%2584%25A4%25EC%259D%25BC_(3).png?table=block&id=867f450a-fb73-40a0-8555-a3beabba0583&spaceId=fc39cb72-89e7-4772-83e2-13a321131160&width=2000&userId=&cache=v2',
+        link: {
+          // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+          mobileWebUrl: 'https://jaebaek-lee.github.io',
+          webUrl: 'https://jaebaek-lee.github.io',
+        },
       },
-    },
-    itemContent: {
-      profileText: '코드트리',
-      profileImageUrl: 'https://thinking-vincent.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffc39cb72-89e7-4772-83e2-13a321131160%2F162c0648-c980-4add-8eba-cc4fce9c99dc%2F%25EB%258B%25A4%25EC%259A%25B4%25EB%25A1%259C%25EB%2593%259C.jpg?table=block&id=71e9bf42-7c5e-41b8-9700-39b3dc979a5d&spaceId=fc39cb72-89e7-4772-83e2-13a321131160&width=180&userId=&cache=v2',
-      titleImageUrl: 'https://cdn3d.iconscout.com/3d/premium/thumb/fight-4731100-3927876.png',
-      titleImageText: '대학 대항전',
-      titleImageCategory: '코테 준비, 미루지 말고 같이 해요!',
-      items: [
+      itemContent: {
+        profileText: '코드트리',
+        profileImageUrl: 'https://thinking-vincent.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffc39cb72-89e7-4772-83e2-13a321131160%2F162c0648-c980-4add-8eba-cc4fce9c99dc%2F%25EB%258B%25A4%25EC%259A%25B4%25EB%25A1%259C%25EB%2593%259C.jpg?table=block&id=71e9bf42-7c5e-41b8-9700-39b3dc979a5d&spaceId=fc39cb72-89e7-4772-83e2-13a321131160&width=180&userId=&cache=v2',
+        titleImageUrl: 'https://cdn3d.iconscout.com/3d/premium/thumb/fight-4731100-3927876.png',
+        titleImageText: '대학 대항전',
+        titleImageCategory: '코테 준비, 미루지 말고 같이 해요!',
+        items: [
+          {
+            item: '참여만 해도',
+            itemOp: '모든 서비스 무료 😍',
+          },
+          {
+            item: '점수 모으면',
+            itemOp: '간식차 선물 🚚',
+          },
+          {
+            item: '블로그 쓰면',
+            itemOp: '에어팟 맥스 🎧',
+          },
+          {
+            item: '1등 대학은',
+            itemOp: '올해 전교생 무료 🏆',
+          },
+        ],
+        sum: '이번 방학은',
+        sumOp: '코드트리와 함께!',
+      },
+      social: {
+        likeCount: 999,
+        commentCount: 999,
+        sharedCount: 999,
+      }, //불필요시 삭제
+      buttons: [
         {
-          item: '참여만 해도',
-          itemOp: '모든 서비스 무료 😍',
-        },
-        {
-          item: '점수 모으면',
-          itemOp: '간식차 선물 🚚',
-        },
-        {
-          item: '블로그 쓰면',
-          itemOp: '에어팟 맥스 🎧',
-        },
-        {
-          item: '1등 대학은',
-          itemOp: '올해 전교생 무료 🏆',
+          title: '참여하기',
+          link: {
+            mobileWebUrl: 'https://codetree.ai',
+            webUrl: 'https://codetree.ai',
+          },
         },
       ],
-      sum: '이번 방학은',
-      sumOp: '코드트리와 함께!',
-    },
-    social: {
-      likeCount: 999,
-      commentCount: 999,
-      sharedCount: 999,
-    }, //불필요시 삭제
-    buttons: [
-      {
-        title: '참여하기',
-        link: {
-          mobileWebUrl: 'https://codetree.ai',
-          webUrl: 'https://codetree.ai',
-        },
-      },
-    ],
-  });
+    });
+  }
+  button.addEventListener('click', onClicked);
 </script>
 
 </html>
